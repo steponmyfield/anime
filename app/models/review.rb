@@ -2,7 +2,9 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :animation
 
-  validates :score, presence: true
+  validates :score, presence: { message: 'を記入してください。' }
+  validates :content, presence: { message: 'を記入してください。' }
+
   def user_score
     if score == 1
       20
