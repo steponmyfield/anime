@@ -19,11 +19,12 @@
           <div class="d-inline">
             <% if user_signed_in? %>
               <% if current_user.profile_image? %>
-                <%= image_tag current_user.profile_image.url, alt: "プロフィール画像", onclick:"js_event()", class: "mx-3 p-1 host-icon nav-trigger", size: '80x80'%>
+                <%= image_tag current_user.profile_image.url, alt: "プロフィール画像", class: "mx-3 p-1 host-icon nav-trigger open", size: '80x80'%>
               <% else %>
-                <%= image_tag "log.jpeg", size: '80x80', alt: "プロフィール画像", onclick:"js_event()", class: "mx-3 p-1 host-icon nav-trigger", size: '80x80'%>
+                <%= image_tag "log.jpeg", size: '80x80', alt: "プロフィール画像", class: "mx-3 p-1 host-icon nav-trigger open", size: '80x80'%>
               <% end %>
               <ul class="header-nav-menu bg-warning list-unstyled text-start p-3" id="click">
+                <i class="fa-solid fa-xmark close"></i>
                 <li><%= link_to "アニメ一覧", root_path, class: "text-decoration-none link-dark" %></li>
                 <li class="my-2"><%= link_to "今までに見たアニメ", records_path, class: "text-decoration-none link-dark" %></li>
                 <li class="my-2"><%= link_to "プロフィール設定", profile_users_path, class: "text-decoration-none link-dark" %></li>
