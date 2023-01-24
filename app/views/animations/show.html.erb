@@ -1,0 +1,30 @@
+<section class="section">
+  <div class="container">
+    <h1 class="my-5 text-center">レビュー画面</h1>
+    <div class="row justify-content-center">
+      <div class="card mb-3 p-0" style="max-width: 940px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <%= image_tag @animation.animation_image.url, class: "card-img-top", alt: "アニメ画像", size: "300x300" %>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="animation-title"><%= @animation.animation_name %></h3>
+              <p class="card-text"><%= @animation.synopsis %></p>
+            </div>
+            <div class="card-body average-score py-0">
+              <div class="star-rating mb-2">
+                <div class="star-rating-front" style="width: <%= @animation.review_score_percentage %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+              <div class="average-score-display ms-1 pt-2">
+                <%= @animation.avg_score %>点(<%= @animation.reviews.count %>件のレビュー)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render 'reviews/form', review: @review, animation: @animation %>
+  </div>
+</section>

@@ -1,0 +1,162 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  min-height: 100vh;
+}
+
+.section {
+  background-color: #f5f5f5;
+  padding: 30px 0;
+}
+
+.notice {
+  background-color: #f5f5f5;
+  margin-bottom: 0;
+}
+
+.alert {
+  background-color: #f5f5f5;
+  margin-bottom: 0!important;
+}
+
+.site-title {
+  font-family: "Nikukyu";
+  font-size: 2rem;
+}
+
+.card {
+  word-wrap: normal!important;
+}
+
+.card-body {
+  padding: 1rem 0.5rem!important;
+}
+
+.header-nav-menu {
+  visibility: hidden;
+  position: absolute;
+  top: 184px;
+  right: 50px;
+  z-index: -10;
+  border-radius: 15px;
+}
+
+.close {
+  color: #a9a9a9;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 0 4px;
+}
+
+.open-modal {
+  visibility: visible;
+  z-index: 100;
+}
+
+.search-form, .email-form, .password-form {
+  position: relative;
+}
+
+.search-form .icon {
+  position: absolute;
+  top: calc(30%);
+  left: 2.13rem;
+  color: #000;
+}
+
+.email-form .icon {
+  position: absolute;
+  top: calc(30%);
+  left: 2.13rem;
+  color: #000;
+}
+
+.password-form .icon {
+  position: absolute;
+  top: calc(30%);
+  left: 2.25rem;
+  color: #000;
+}
+
+.main-rating .fa {
+  font-size: 30px;
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+.ratings {
+  display: inline-block;
+}
+
+.rating-value-display {
+  font-size: 20px;
+  display: inline-block;
+}
+
+.star-rating-user {
+  color: #ffcc00;
+}
+
+.review-text {
+  letter-spacing: 0.1em;
+  line-height: 30px;
+}
+
+.view-content {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+.pagination {
+  width: fit-content;
+  margin: 50px auto;
+}
+
+.main-error {
+  padding: 0 30px;
+  margin: 0 auto;
+  max-width: 995px;
+}
+
+.list-error {
+  padding: 20px 30px 40px;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+@media screen and (max-width:991px){
+  .header-nav-menu {
+    top: 254px;
+    right: 0px;
+  }
+
+  .search-form .icon {
+    position: absolute;
+    top: calc(30%);
+    left: 2.13rem;
+    color: #000;
+  }
+}
