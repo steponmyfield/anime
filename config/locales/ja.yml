@@ -28,8 +28,10 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
       review:
-          content: レビュー
-          score: 評価
+        content: レビュー
+        score: 評価
+      record:
+        record_animationname: 作品名
     models:
       user: ユーザー
   devise:
