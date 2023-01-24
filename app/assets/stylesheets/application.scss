@@ -47,11 +47,27 @@ body {
 }
 
 .header-nav-menu {
-  display: none;
+  visibility: hidden;
   position: absolute;
   top: 184px;
   right: 50px;
-  z-index: 10;
+  z-index: -10;
+  border-radius: 15px;
+}
+
+.close {
+  color: #a9a9a9;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 0 4px;
+}
+
+.open-modal {
+  visibility: visible;
+  z-index: 100;
 }
 
 .search-form, .email-form, .password-form {
@@ -117,6 +133,18 @@ body {
 .pagination {
   width: fit-content;
   margin: 50px auto;
+}
+
+.main-error {
+  padding: 0 30px;
+  margin: 0 auto;
+  max-width: 995px;
+}
+
+.list-error {
+  padding: 20px 30px 40px;
+  margin: 0 auto;
+  max-width: 400px;
 }
 
 @media screen and (max-width:991px){
