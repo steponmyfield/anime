@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   mount_uploader :profile_image, ProfileimageUploader
 
+  validates :username, length: { maximum: 10, message: "は10文字以内で設定してください" }, on: :update
+
   has_many :reviews, dependent: :destroy
   has_many :records, dependent: :destroy
 
