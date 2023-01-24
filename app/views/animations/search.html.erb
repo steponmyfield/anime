@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="container">
+    <h1 class="my-5 text-center">検索結果 : <%= @search.count %>件</h1>
+    <div class="row justify-content-center">
+      <% @search.each do |search| %>
+        <div class="card p-0 mx-3 my-2" style="width: 18.6rem;">
+          <%= image_tag search.animation_image.url, class: "card-img-top", alt: "アニメ画像", size: "250x250" %>
+          <div class="card-body p-0">
+            <h5 class="animation-title bg-secondary text-white p-1"><%= search.animation_name %></h5>
+            <p class="card-text px-2 py-1"><%= search.synopsis.truncate(45) %><%= link_to "続きを読む", animation_reviews_path(search), class: "text-link" %></p>
+          </div>
+          <div class="card-body average-score py-0">
+            <div class="star-rating mb-2">
+              <div class="star-rating-front" style="width: <%= search.review_score_percentage %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+            <div class="average-score-display ms-1 pt-2">
+              <%= search.avg_score %>点(<%= search.reviews.count %>件のレビュー)
+            </div>
+          </div>
+          <div class="card-body">
+            <%= link_to "レビューを見る", animation_reviews_path(search), class: "view-link me-4" %>
+            <% if user_signed_in? %>
+              <% if @user.username? %>
+                <%= link_to "レビューを書く", animation_path(search), class: "write-link" %>
+              <% elsif %>
+                <%= link_to "レビューを書く", controller: 'animations', action: 'username_flash_message', class: "write-link" %>
+              <% end %>
+            <% elsif %>
+              <%= link_to "レビューを書く", controller: 'animations', action: 'session_flash_message', class: "view-link" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
