@@ -55,7 +55,6 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'mini_magick'
   gem 'pry-rails'
-  gem 'rspec-rails'
   gem 'rails-i18n'
 end
 
@@ -73,6 +72,7 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'rails-erd'
 end
 
 group :test do
@@ -80,6 +80,9 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 gem 'devise'
