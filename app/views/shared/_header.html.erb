@@ -1,0 +1,44 @@
+<header class="p-3 bg-secondary text-white">
+  <div class="container post-top">
+    <div class="row">
+      <%= link_to "アニコミ", root_path, class: "col-12 col-lg-2 text-center p-2 mb-2 link-dark text-decoration-none site-title" %>
+
+      <%= form_with url: search_animations_path, local: true, method: :get, class: "col-12 col-lg-5 mb-3 mt-3 search-form d-flex" do |f| %>
+        <i class="icon fa-solid fa-magnifying-glass"></i>
+        <%= f.text_field :animation_name, class:"form-control form-control-dark ps-5", placeholder: "作品名を入力" %>
+        <%= f.submit "検索", class: "btn bg-warning" %>
+      <% end %>
+
+      <div class="text-end">
+        <div class="">
+          <div class="d-inline">
+            <% if user_signed_in? %>
+              <%= current_user.username %>
+            <% end %>
+          </div>
+          <div class="d-inline">
+            <% if user_signed_in? %>
+              <% if current_user.profile_image? %>
+                <%= image_tag current_user.profile_image.url, alt: "プロフィール画像", class: "mx-3 p-1 host-icon nav-trigger open", size: '80x80'%>
+              <% else %>
+                <%= image_tag "log.jpeg", size: '80x80', alt: "プロフィール画像", class: "mx-3 p-1 host-icon nav-trigger open", size: '80x80'%>
+              <% end %>
+              <ul class="header-nav-menu bg-warning list-unstyled text-start p-3" id="click">
+                <i class="fa-solid fa-xmark close"></i>
+                <li><%= link_to "アニメ一覧", root_path, class: "text-decoration-none link-dark" %></li>
+                <li class="my-2"><%= link_to "今までに見たアニメ", records_path, class: "text-decoration-none link-dark" %></li>
+                <li class="my-2"><%= link_to "プロフィール設定", profile_users_path, class: "text-decoration-none link-dark" %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-decoration-none link-dark" %></li>
+              </ul>
+            <% else %>
+              <%= link_to "ログイン", new_user_session_path, class:"btn btn-outline-dark me-2" %>
+              <%= link_to "新規登録", new_user_registration_path, class:"btn btn-info" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<%= javascript_include_tag "nav.js" %>

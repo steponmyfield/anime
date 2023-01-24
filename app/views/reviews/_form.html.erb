@@ -1,0 +1,39 @@
+<div class="view-content my-5">
+  <h2 class="mb-3">レビューを書く</h1>
+  <% if @review.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_with model: @review, url: animation_reviews_path(animation), class: "", local: true do |f| %>
+    <div class="main-rating my-2">
+      <div class="ratings">
+        <span class="fa fa-star-o star1" id="star"></span>
+        <span class="fa fa-star-o star2" id="star"></span>
+        <span class="fa fa-star-o star3" id="star"></span>
+        <span class="fa fa-star-o star4" id="star"></span>
+        <span class="fa fa-star-o star5" id="star"></span>
+      </div>
+      <div class="rating-value-display ms-2">
+        <span id="rating-value-display">0</span>/5
+      </div>
+    </div>
+    <div class="">
+      <div class="">
+        <%= f.hidden_field :animation_id, value: animation.id %>
+        <%= f.hidden_field :score, id: "rating-value" %>
+        <%= f.text_area :content, class: "textarea", rows: 10 %>
+      </div>
+      <div class="mt-3">
+        <%= f.submit "投稿", class: "btn btn-info me-4 px-5" %>
+        <%= link_to "戻る", root_path, class: "btn btn-outline-dark me-2", id: "back_btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= javascript_include_tag "star.js" %>

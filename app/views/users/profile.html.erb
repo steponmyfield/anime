@@ -1,0 +1,47 @@
+<section class="section">
+  <div class="container">
+    <div class="my-5 pb-4 shadow-lg rounded bg-light">
+      <h2 class="py-5 text-center">プロフィール</h2>
+        <div class="text-center">
+          <%= image_tag current_user.profile_image.url, alt: "プロフィール画像", id: "figureImage", size: 120 %>
+        </div>
+        <%= form_with model: @user, local: true do |f| %>
+          <% if current_user.email == 'guest@example.com' %>
+            <div class="row align-items-center justify-content-center my-3">
+              <%= f.label :profile_image, "アイコン画像", class: "col-3 col-md-3 col-lg-2 ps-lg-5 ps-0 ps-md-5 ps-lg-0 col-form-label" %>
+              <div class="col-7 col-md-5 col-lg-3 email-form">
+                <%= f.text_field :profile_image, readonly: true, class: "form-control form-control-dark username-input" %>
+              </div>
+            </div>
+            <div class="row align-items-center justify-content-center my-3">
+              <%= f.label :username, "名前", class: "col-3 col-md-3 col-lg-2 ps-lg-5 ps-0 ps-md-5 ps-lg-0 col-form-label" %>
+              <div class="col-7 col-md-5 col-lg-3 email-form">
+                <%= f.text_field :username, readonly: true, class: "form-control form-control-dark username-input" %>
+              </div>
+            </div>
+            <div class="actions text-center my-5">
+              <p>編集できません</p>
+            </div>
+          <% else %>
+            <div class="row align-items-center justify-content-center my-3">
+              <%= f.label :profile_image, "アイコン画像", class: "col-3 col-md-3 col-lg-2 ps-lg-5 ps-0 ps-md-5 ps-lg-0 col-form-label" %>
+              <div class="col-7 col-md-5 col-lg-3 email-form">
+                <%= f.file_field :profile_image, id: "input", accept: "image/*" %>
+              </div>
+            </div>
+            <div class="row align-items-center justify-content-center my-3">
+              <%= f.label :username, "名前", class: "col-3 col-md-3 col-lg-2 ps-lg-5 ps-0 ps-md-5 ps-lg-0 col-form-label" %>
+              <div class="col-7 col-md-5 col-lg-3 email-form">
+                <%= f.text_field :username, class: "form-control form-control-dark username-input" %>
+              </div>
+            </div>
+            <div class="actions text-center my-5">
+              <%= f.submit "更新", class: "btn btn-info px-5" %>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</section>
+
+<%= javascript_include_tag "profileimage.js" %>

@@ -1,0 +1,25 @@
+.star-rating {
+  position: relative;
+  height: 1em;
+  font-size: 25px;
+}
+
+.star-rating-front {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+
+.star-rating-back {
+  color: #ccc;
+}
+
+.average-score {
+  display: flex;
+}
+
+.average-score-display {
+  font-size: 13px;
+}

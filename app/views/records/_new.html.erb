@@ -1,0 +1,10 @@
+<section class="section add_animation" id="addclick">
+  <div class="container">
+    <%= form_with model: @record, local: true do |f| %>
+      <%= f.label :record_animationname, "作品名" %>
+      <%= f.text_field :record_animationname, class: "form-control mb-4" %>
+      <%= f.submit :"追加", class: "btn btn-primary my-3" %>
+      <%= link_to "閉じる", :back, class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+</section>
