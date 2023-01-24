@@ -1,0 +1,21 @@
+inherit_from:
+  - .rubocop_todo.yml
+  - .rubocop_airbnb.yml
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+Rails:
+  Enabled: true
+
+# 文字数の上限を８０文字から変更
+LineLength:
+  Max: 130
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/*'
+    - 'vendor/**/*'
