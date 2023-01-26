@@ -3,22 +3,22 @@
 アニメのクチコミ、レビューサイトです。
 
 ### 機能
-.ユーザー登録、ログイン機能(devise)
-・画像アップロード機能(carrierwave)
-・星評価レビュー機能
-・検索機能
-・見たアニメ記録機能
-・並び替え機能
-・ページネーション(kaminari)
+.ユーザー登録、ログイン機能(devise)<br>
+・画像アップロード機能(carrierwave)<br>
+・星評価レビュー機能<br>
+・検索機能<br>
+・見たアニメ記録機能<br>
+・並び替え機能<br>
+・ページネーション(kaminari)<br>
 
 ### テスト
-・単体テスト(model)
-・機能テスト(request)
-・統合テスト(system)
+・単体テスト(model)<br>
+・機能テスト(request)<br>
+・統合テスト(system)<br>
 
 ### 使用技術
-macOS
-ruby 2.7.6p219
-Rails 7.0.2.3
-SQLite3 3.32.3
-Rspec
+macOS<br>
+ruby 2.7.6p219<br>
+Rails 7.0.2.3<br>
+SQLite3 3.32.3<br>
+Rspec<br>
