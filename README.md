@@ -1,24 +1,24 @@
-# README
+# アニメのクチコミサイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+アニメのクチコミ、レビューサイトです。
 
-Things you may want to cover:
+### 機能
+.ユーザー登録、ログイン機能(devise)
+・画像アップロード機能(carrierwave)
+・星評価レビュー機能
+・検索機能
+・見たアニメ記録機能
+・並び替え機能
+・ページネーション(kaminari)
 
-* Ruby version
+### テスト
+・単体テスト(model)
+・機能テスト(request)
+・統合テスト(system)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 使用技術
+macOS
+ruby 2.7.6p219
+Rails 7.0.2.3
+SQLite3 3.32.3
+Rspec
